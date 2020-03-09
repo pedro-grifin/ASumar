@@ -31,19 +31,20 @@ public class ASumar {
 	 */
 	public String mostrar() {
 		String numero = valor_inicial;
-		String cadena ="";
+		StringBuffer sb = new StringBuffer();
         if (numero.length() == 1) {
             return (numero + " = " + numero);
         } else if(Integer.parseInt(numero) < 0) {
         	return null;
         } else if(numero.length()>0) {
-        	for (int i = 0; i < valor_inicial.length(); i++) {       
-            
-            cadena = valor_inicial.substring(i, i+1) + " + ";
-        	}
-        	return cadena + " = " + total();
+        	for (int i = 0; i < valor_inicial.length(); i++) {
+                sb.append(valor_inicial.substring(i, i+1) +" + ");
+                while(i+1<numero.length()) {}
+            }
+        	String cadena=sb.toString();
+        	return  cadena;
         }
-		return null;
+		return  null;
 	}
 
 }

@@ -20,6 +20,14 @@ public class TestASumar {
 	        assertEquals(null,resultado );
 		 
 	 }
+	 
+	 @Test
+	 public void testMasDeUnDigito() {
+		 ASumar sumi = new ASumar("27");
+	        String resultado = sumi.mostrar();
+	        assertEquals("2 + 7 + ",resultado );
+		 
+	 }
 	
 
 }
