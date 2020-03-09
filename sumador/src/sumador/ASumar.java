@@ -12,14 +12,16 @@ public class ASumar {
 		this.valor_inicial = string;
 	}
 
-	
+	/**
+	 * calcula la suma de los digitos
+	 * @return la suma total
+	 */
 	public int total() {
         int suma = 0;
 
         for (int i = 0; i < valor_inicial.length(); i++) {
-            // Cadena de un dígito.
-            String digito = valor_inicial.substring(i, 1);
-            suma = suma + Integer.getInteger(digito);
+            char digito = valor_inicial.charAt(i);
+            suma += Character.getNumericValue(digito);
         }
         return suma;
 
@@ -38,9 +40,12 @@ public class ASumar {
         	return null;
         } else if(numero.length()>0) {
         	for (int i = 0; i < valor_inicial.length(); i++) {
-                sb.append(valor_inicial.substring(i, i+1) +" + ");
-                while(i+1<numero.length()) {}
-            }
+                sb.append(valor_inicial.substring(i, i+1));
+                if(i+1<valor_inicial.length()) {
+                	sb.append(" + ");
+                	}
+                }
+        	sb.append(" = " + total());
         	String cadena=sb.toString();
         	return  cadena;
         }
